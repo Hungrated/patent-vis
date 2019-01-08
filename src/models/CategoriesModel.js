@@ -1,8 +1,8 @@
-import { searchWithParams } from '../services/RequestApi';
+import { getCategoriesChartData } from '../services/RequestApi';
 
 export default {
 
-  namespace: 'search',
+  namespace: 'categories',
 
   state: {
     data: {}
@@ -15,7 +15,7 @@ export default {
 
   effects: {
     * fetch ({payload}, {put, call}) {
-      const response = yield call(searchWithParams, payload);
+      const response = yield call(getCategoriesChartData, payload);
       yield put({
         type: 'refresh',
         payload: response.data

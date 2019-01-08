@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 
-import styles from '../styles/HelpPage.less';
+import styles from '../styles/StaffPage.less';
 
 // const mapStateToProps = ({ help }) => ({
 //   help,
@@ -16,7 +16,7 @@ import styles from '../styles/HelpPage.less';
 //   },
 // });
 
-class HelpPage extends PureComponent {
+class StaffPage extends PureComponent {
 
   // componentDidMount () {
   //   this.props.dispatcher.help.fetch();
@@ -30,7 +30,7 @@ class HelpPage extends PureComponent {
   }
 }
 
-HelpPage.propTypes = {};
+StaffPage.propTypes = {};
 
-// export default connect(mapStateToProps, mapDispatchToProps)(HelpPage);
-export default connect()(HelpPage);
+// export default connect(mapStateToProps, mapDispatchToProps)(StaffPage);
+export default connect()(StaffPage);

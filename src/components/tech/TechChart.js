@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../../styles/ApplyChart.less';
+import styles from '../../styles/TechChart.less';
 import ReactEcharts from 'echarts-for-react';
 import 'echarts/extension/bmap/bmap';
 
-const ApplyChart = ({data}) => {
+const TechChart = ({data}) => {
 
   const getOption = () => {
 
@@ -172,6 +172,6 @@ const ApplyChart = ({data}) => {
   );
 };
 
-ApplyChart.propTypes = {};
+TechChart.propTypes = {};
 
-export default ApplyChart;
+export default TechChart;

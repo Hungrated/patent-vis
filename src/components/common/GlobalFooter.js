@@ -4,7 +4,7 @@ import styles from '../../styles/GlobalFooter.less';
 const GlobalFooter = () => {
   return (
     <div className={styles['g-footer']}>
-      Copyright © 2018 World Wide Vision, Zhejiang University, all rights
+      Copyright © 2019 Hungrated, Zhejiang University, all rights
       reserved.
     </div>
   );

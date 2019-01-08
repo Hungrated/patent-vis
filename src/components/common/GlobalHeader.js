@@ -26,22 +26,17 @@ const navItems = [
   {
     key: 'categories',
     tlt: '类 型',
-    link: '/statistics'
+    link: '/categories'
   },
   {
     key: 'tech',
     tlt: '技术分布',
-    link: '/search'
+    link: '/tech'
   },
   {
     key: 'staff',
     tlt: '研发人员',
-    link: '/search'
-  },
-  {
-    key: 'help',
-    tlt: 'tab',
-    link: '/help'
+    link: '/staff'
   }
 ];
 

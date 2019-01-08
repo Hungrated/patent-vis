@@ -16,24 +16,19 @@ function RouterConfig ({history, app}) {
       component: () => require('./routes/TrendsPage')
     },
     {
-      path: '/statistics',
-      models: () => [...commonModels, require('./models/StatisticsModel')],
-      component: () => require('./routes/StatisticsPage')
+      path: '/categories',
+      models: () => [...commonModels, require('./models/CategoriesModel')],
+      component: () => require('./routes/CategoriesPage')
     },
     {
-      path: '/search',
-      models: () => [...commonModels, require('./models/SearchModel')],
-      component: () => require('./routes/SearchPage')
+      path: '/tech',
+      models: () => [...commonModels, require('./models/TechModel')],
+      component: () => require('./routes/TechPage')
     },
     {
-      path: '/searchresult',
+      path: '/staff',
       models: () => [...commonModels],
-      component: () => require('./routes/HelpPage')
-    },
-    {
-      path: '/help',
-      models: () => [...commonModels],
-      component: () => require('./routes/HelpPage')
+      component: () => require('./routes/StaffPage')
     },
     {
       path: '/error',

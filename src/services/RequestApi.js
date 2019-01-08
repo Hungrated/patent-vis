@@ -4,12 +4,12 @@ export async function getApplyDateQuarterData () {
   return request('/mock/apply_date_data.json');
 }
 
-export async function queryRelationChartData () {
-  return request('/mock/apply_date_data.json');
+export async function getCategoriesChartData () {
+  return request('/mock/categories_data.json');
 }
 
-export async function queryStatisticsChartData () {
-  return request('/mock/apply_date_data.json');
+export async function getTechChartData () {
+  return request('/mock/tech_data.json');
 }
 
 export async function searchWithParams () {

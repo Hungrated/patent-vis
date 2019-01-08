@@ -1,8 +1,8 @@
-import { queryStatisticsChartData } from '../services/RequestApi';
+import { getTechChartData } from '../services/RequestApi';
 
 export default {
 
-  namespace: 'statistics',
+  namespace: 'tech',
 
   state: {
     data: {}
@@ -15,7 +15,7 @@ export default {
 
   effects: {
     * fetch ({payload}, {put, call}) {
-      const response = yield call(queryStatisticsChartData, payload);
+      const response = yield call(getTechChartData, payload);
       yield put({
         type: 'refresh',
         payload: response.data
