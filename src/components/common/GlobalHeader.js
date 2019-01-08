@@ -19,24 +19,24 @@ const mapDispatchToProps = dispatch => ({
 
 const navItems = [
   {
-    key: 'overview',
-    tlt: 'tab1',
-    link: '/overview'
+    key: 'trends',
+    tlt: '专利趋势',
+    link: '/trends'
   },
   {
-    key: 'statistics',
-    tlt: 'tab',
+    key: 'categories',
+    tlt: '类 型',
     link: '/statistics'
   },
   {
-    key: 'search',
-    tlt: 'tab',
+    key: 'tech',
+    tlt: '技术分布',
     link: '/search'
   },
   {
-    key: 'reveal-api',
-    tlt: 'tab',
-    link: 'https://github.com/Hungrated/gcnt-vis'
+    key: 'staff',
+    tlt: '研发人员',
+    link: '/search'
   },
   {
     key: 'help',
@@ -48,7 +48,7 @@ const navItems = [
 class GlobalHeader extends PureComponent {
 
   state = {
-    current: window.location.pathname.substring(1) || 'overview'
+    current: window.location.pathname.substring(1) || 'trends'
   };
 
   togglePageRedirect = (key, link) => {
@@ -75,7 +75,7 @@ class GlobalHeader extends PureComponent {
       <div className={styles['g-header']}>
         <div className={styles['m-logo']}>
           <img className={styles['inner']}
-               src={require('../../assets/gcnt-logo-full.png')}
+               src={require('../../assets/patent-vis-logo.png')}
                alt={'logo'}/>
         </div>
         <div className={styles['m-nav']}>

@@ -32,11 +32,6 @@ class SearchPage extends PureComponent {
     return (
       <div className={styles['g-main']}>
         <div className={styles['m-bg']}>
-          <video autoPlay={true}
-                 muted={true}
-                 loop={true}
-                 src={require('../assets/search-bg.mp4')}
-          />
         </div>
         <div className={styles['m-cover']}/>
         <div className={styles['m-search']}>

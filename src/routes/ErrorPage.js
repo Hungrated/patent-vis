@@ -6,7 +6,7 @@ function ErrorPage () {
   return (
     <div className={styles['g-main']}>
       <img className={styles['m-img']}
-           src={require('../assets/gcnt-logo-s.png')} alt={'logo'}/>
+           src={require('../assets/error.png')} alt={'logo'}/>
       <p className={styles['m-tlt']}>Oops, the page you request is
         missing...</p>
       <p className={styles['m-subtlt']}>Please try again.</p>
