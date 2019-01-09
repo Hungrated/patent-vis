@@ -19,6 +19,11 @@ const mapDispatchToProps = dispatch => ({
 
 const navItems = [
   {
+    key: 'overview',
+    tlt: '总 览',
+    link: '/overview'
+  },
+  {
     key: 'trends',
     tlt: '专利趋势',
     link: '/trends'

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/TechChart.less';
 import ReactEcharts from 'echarts-for-react';
-import 'echarts/extension/bmap/bmap';
+
 
 const TechChart = ({data}) => {
 

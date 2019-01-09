@@ -11,6 +11,11 @@ function RouterConfig ({history, app}) {
 
   const routes = [
     {
+      path: '/overview',
+      models: () => [...commonModels, require('./models/OverviewModel')],
+      component: () => require('./routes/OverviewPage')
+    },
+    {
       path: '/trends',
       models: () => [...commonModels, require('./models/TrendsModel')],
       component: () => require('./routes/TrendsPage')
@@ -42,7 +47,7 @@ function RouterConfig ({history, app}) {
       <GlobalHeader/>
       <Router history={history}>
         <Switch>
-          <Route path={'/'} exact render={() => <Redirect to={'/trends'}/>}/>
+          <Route path={'/'} exact render={() => <Redirect to={'/overview'}/>}/>
           {
             routes.map(({path, ...dynamics}, key) => (
               <Route key={key}

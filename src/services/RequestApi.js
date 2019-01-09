@@ -1,6 +1,6 @@
 import request from '../utils/request';
 
-export async function getApplyDateQuarterData () {
+export async function getApplyDateData () {
   return request('/mock/apply_date_data.json');
 }
 

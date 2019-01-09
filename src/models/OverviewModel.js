@@ -2,7 +2,7 @@ import { getApplyDateData } from '../services/RequestApi';
 
 export default {
 
-  namespace: 'trends',
+  namespace: 'overview',
 
   state: {
     data: {
