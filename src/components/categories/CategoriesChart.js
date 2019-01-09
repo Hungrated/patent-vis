@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
+import styles from '../../styles/CategoriesChart.less';
 
 const CategoriesChart = ({data}) => {
 
@@ -116,7 +117,7 @@ const CategoriesChart = ({data}) => {
   };
 
   return (
-    <div>
+    <div className={styles['g-inner']}>
       <ReactEcharts
         option={getOption()}
         notMerge={true}

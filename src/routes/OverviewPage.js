@@ -3,7 +3,10 @@ import { connect } from 'dva';
 import styles from '../styles/OverviewPage.less';
 
 import OverviewMapChart from '../components/overview/OverviewMapChart';
+import QuarterScatterChart from '../components/overview/QuarterScatterChart';
+import SimpleApplyChart from '../components/overview/SimpleApplyChart';
 import ProvinceRankChart from '../components/overview/ProvinceRankChart';
+import SimpleCategoriesChart from '../components/overview/SimpleCategoriesChart';
 
 const mapStateToProps = ({overview}) => ({
   overview
@@ -29,8 +32,17 @@ class TrendsPage extends PureComponent {
     return (
       JSON.stringify(data) !== '{}' &&
       <div className={styles['g-main']}>
-        <div className={styles['g-left']}><OverviewMapChart data={data}/></div>
-        <div className={styles['g-right']}><ProvinceRankChart data={data}/></div>
+        <div className={styles['g-left']}>
+          <QuarterScatterChart data={data}/>
+          <SimpleApplyChart data={data}/>
+        </div>
+        <div className={styles['g-middle']}>
+          <OverviewMapChart data={data}/>
+        </div>
+        <div className={styles['g-right']}>
+          <ProvinceRankChart data={data}/>
+          <SimpleCategoriesChart data={data}/>
+        </div>
       </div>
     );
   }

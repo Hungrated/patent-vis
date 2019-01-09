@@ -11,7 +11,7 @@ const OverviewMapChart = ({data}) => {
     const detailedData = data.applyNumByYearAndProvince;
     let heatMapData = [];
 
-    if(data.heatMap) {
+    if (data.heatMap) {
       heatMapData = data.heatMap.map(function (item) {
         return {
           name: item.province,
@@ -24,14 +24,11 @@ const OverviewMapChart = ({data}) => {
       });
     }
 
-    let xAxisDetailedData = ['xAxis'];
-    let yAxisDetailedData = ['专利申请数量'];
-
     function tooltipCharts () {
       let xAxisDetailedData = ['xAxis'].concat(
-        Object.keys(detailedData[arguments[0]]));
-      let yAxisDetailedData = ['amount'].concat(
-        Object.values(detailedData[arguments[0]]));
+        Object.keys(detailedData[arguments[0]] || {}));
+      let yAxisDetailedData = ['专利申请数量'].concat(
+        Object.values(detailedData[arguments[0]] || {}));
       let myChart = echarts.init(document.getElementById('tooltipBarId'));
       let option = {
         tooltip: {},
@@ -52,7 +49,7 @@ const OverviewMapChart = ({data}) => {
           }
         },
         yAxis: {},
-        color: ['#4FA8F9', '#F5A623'],
+        color: ['#4FA8F9', '#3c67b9'],
         grid: {
           show: true,
           backgroundColor: '#FAFAFA',
@@ -66,7 +63,8 @@ const OverviewMapChart = ({data}) => {
             smooth: true,
             seriesLayoutBy: 'row',
             barWidth: 10
-          }]
+          }
+        ]
       };
       myChart.setOption(option);
     }
@@ -98,36 +96,32 @@ const OverviewMapChart = ({data}) => {
           color: '#000',
           decoration: 'none'
         },
-        // position: function (point, params, dom, rect, size) {
-        //   return [point[0], point[1]];
-        // },
         formatter: function (params) {
-          // console.log(params)
           let tipHtml = '<div' +
             ' style="height:360px;width:400px;border-radius:5px;background:#fff;box-shadow:0 0 10px 5px #eee">' +
             '    <div style="height:50px;width:100%;border-radius:5px;background:#F8F9F9;border-bottom:1px solid #F0F0F0">' +
             '        <span style="line-height:50px;margin-left:18px">' +
-            params.name + '</span>' +
+            (params ? params.name : '') + '</span>' +
             '    </div>' +
             '    <div style="height:110px;width:100%;background:#fff">' +
             '        <div style="padding-left:18px;padding-top:22px">' +
             '            <span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:rgba(92,169,235,1)"></span>' +
             '            <span>专利申请总数</span>' +
             '            <span style="float:right;margin-right:18px">' +
-            params.data.tipData[0] + '</span>' +
+            (params.data ? params.data.tipData[0] : '') + '</span>' +
             '        </div>' +
             '        <div style="padding-left:18px;padding-top:14px">' +
             '            <span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:rgba(92,169,235,1)"></span>' +
             '            <span>专利公开总数</span>' +
             '            <span style="float:right;margin-right:18px">' +
-            params.data.tipData[1] + '</span>' +
+            (params.data ? params.data.tipData[1] : '') + '</span>' +
             '        </div>' +
             '    </div>' +
             '    <div id="tooltipBarId" style="height:200px;width:100%;border-radius:0 0 5px 0;background:#fff"></div>' +
             '</div>';
           setTimeout(function () {
             tooltipCharts(params.name);
-          }, 10);
+          }, 5);
           return tipHtml;
         }
       },
@@ -160,7 +154,7 @@ const OverviewMapChart = ({data}) => {
         notMerge={true}
         lazyUpdate={true}
         style={{
-          minWidth: '500px',
+          minWidth: '550px',
           height: 'calc(100vh - 70px)',
           minHeight: '500px'
         }}

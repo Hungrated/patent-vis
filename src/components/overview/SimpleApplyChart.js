@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../../styles/ApplyChart.less';
+import styles from '../../styles/SimpleApplyChart.less';
 import ReactEcharts from 'echarts-for-react';
 
 
-const ApplyChart = ({data}) => {
+const SimpleApplyChart = ({data}) => {
 
   const getOption = () => {
 
@@ -12,12 +12,12 @@ const ApplyChart = ({data}) => {
     let yAxisQuarters = [];
     let yAxisYears = [];
 
-    if (data.quarters && data.years) {
-      data.quarters.forEach(function (item) {
+    if (data.apply && data.apply.quarters && data.apply.years) {
+      data.apply.quarters.forEach(function (item) {
         xAxisQuarters.push(item['year_quarter']);
         yAxisQuarters.push(item['amount']);
       });
-      data.years.forEach(function (item) {
+      data.apply.years.forEach(function (item) {
         xAxisYears.push(item['year']);
         yAxisYears.push(item['amount']);
       });
@@ -25,14 +25,16 @@ const ApplyChart = ({data}) => {
 
     return {
       title: {
-        text: '1979-2015年专利季度申请量趋势及年申请量比较',
+        text: '1979-2015年专利申请趋势',
         left: 'center',
         top: 20
       },
       tooltip: {
         trigger: 'axis'
       },
+      color: ['#2e5da2', '#73e2ff'],
       grid: {
+        top: '25%',
         containLabel: true
       },
       legend: {
@@ -50,6 +52,9 @@ const ApplyChart = ({data}) => {
             lineStyle: {
               color: '#9d9b9e'
             }
+          },
+          axisLabel: {
+            show: false
           },
           splitLine: {
             show: false
@@ -70,6 +75,9 @@ const ApplyChart = ({data}) => {
               color: '#9d9b9e'
             }
           },
+          axisLabel: {
+            show: false
+          },
           axisPointer: {
             type: 'none'
           },
@@ -86,38 +94,21 @@ const ApplyChart = ({data}) => {
           data: xAxisYears
         }
       ],
-      dataZoom: [
-        {
-          show: true,
-          height: 25,
-          start: 50,
-          xAxisIndex: [
-            0,
-            1
-          ],
-          bottom: 30,
-          handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-          handleSize: '110%',
-          handleStyle: {
-            color: '#d3dee5'
-          },
-          borderColor: '#90979c'
-        },
-        {
-          type: 'inside',
-          show: true,
-          height: 35,
-          start: 1,
-          end: 35
-        }],
       yAxis: [
         {
           type: 'value',
           name: '季度申请量',
+          axisLabel: {
+            show: false
+          },
           position: 'right'
+
         }, {
           type: 'value',
           name: '年申请量',
+          axisLabel: {
+            show: false
+          },
           position: 'left'
         }],
       series: [
@@ -147,7 +138,7 @@ const ApplyChart = ({data}) => {
           yAxisIndex: 1,
           label: {
             normal: {
-              show: true,
+              show: false,
               position: 'top'
             }
           },
@@ -164,15 +155,15 @@ const ApplyChart = ({data}) => {
         notMerge={true}
         lazyUpdate={true}
         style={{
+          minWidth: '300px',
           width: '100%',
-          height: 'calc(100vh - 70px)',
-          minHeight: '500px'
+          height: '100%'
         }}
       />
     </div>
   );
 };
 
-ApplyChart.propTypes = {};
+SimpleApplyChart.propTypes = {};
 
-export default ApplyChart;
+export default SimpleApplyChart;

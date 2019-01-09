@@ -12,7 +12,10 @@ function RouterConfig ({history, app}) {
   const routes = [
     {
       path: '/overview',
-      models: () => [...commonModels, require('./models/OverviewModel')],
+      models: () => [
+        ...commonModels,
+        require('./models/OverviewModel'),
+        require('./models/TrendsModel')],
       component: () => require('./routes/OverviewPage')
     },
     {

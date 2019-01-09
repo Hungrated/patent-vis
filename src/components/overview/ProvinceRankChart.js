@@ -6,7 +6,6 @@ const ProvinceRankChart = ({data}) => {
 
   const getOption = () => {
 
-    console.log(data);
     let xAxisData = [];
     let yAxisData = [];
 
@@ -23,27 +22,33 @@ const ProvinceRankChart = ({data}) => {
         left: 'center',
         top: 20
       },
-      color: ['#2d62a6'],
+      tooltip: {
+        trigger: 'axis'
+      },
+      color: ['#3b84dc'],
       grid: {
         left: '3%',
-        right: '4%',
+        right: '10%',
         bottom: '3%',
         containLabel: true
       },
       xAxis: {
         type: 'value',
-        splitLine: {
+        axisLabel: {
           show: false
         }
       },
       yAxis: {
         type: 'category',
         inverse: true,
+        axisPointer: {
+          type: 'none'
+        },
         data: xAxisData.slice(0, 15)
       },
       series: [
         {
-          name: '各省专利申请排行Top15',
+          name: '专利申请总数',
           type: 'bar',
           smooth: true,
           lineStyle: {
@@ -67,9 +72,9 @@ const ProvinceRankChart = ({data}) => {
         notMerge={true}
         lazyUpdate={true}
         style={{
-          minWidth: '480px',
-          height: 'calc(100vh - 70px)',
-          minHeight: '500px'
+          minWidth: '300px',
+          width: '100%',
+          height: '100%'
         }}
       />
     </div>

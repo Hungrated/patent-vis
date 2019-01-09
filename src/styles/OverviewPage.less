@@ -4,17 +4,32 @@
   text-align: center;
   font-size: 30px;
   height: 100%;
-  display: flex;
+  position: relative;
 
-  .g-left, .g-right {
-    display: flex;
+  .g-left, .g-middle .g-right {
+    display: inline-block;
   }
 
   .g-left {
-    flex: 1 1 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    box-shadow: 1px 0 15px rgba(0, 65, 107, 0.4);
+  }
+
+  .g-middle {
+    margin: 0 300px 0 300px;
+    height: 100%;
   }
 
   .g-right {
-    flex: 0 1 480px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    box-shadow: -1px 0 15px rgba(0, 65, 107, 0.4);
   }
 }
