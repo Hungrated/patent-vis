@@ -7,10 +7,19 @@ const ProvinceRankChart = ({data}) => {
   const getOption = () => {
 
     console.log(data);
+    let xAxisData = [];
+    let yAxisData = [];
+
+    if (data.applyNumByProvince) {
+      xAxisData = data.applyNumByProvince.map(function (item) {
+        yAxisData.push(item['apply_num']);
+        return item.province;
+      });
+    }
 
     return {
       title: {
-        text: '各省专利申请与公开情况',
+        text: '各省专利申请排行Top15',
         left: 'center',
         top: 20
       },
@@ -30,26 +39,11 @@ const ProvinceRankChart = ({data}) => {
       yAxis: {
         type: 'category',
         inverse: true,
-        data: [
-          '0',
-          '10',
-          '20',
-          '30',
-          '40',
-          '50',
-          '60',
-          '70',
-          '80',
-          '90',
-          '100',
-          '110',
-          '120',
-          '130',
-          '140']
+        data: xAxisData.slice(0, 15)
       },
       series: [
         {
-          name: '中国各省专利申请与公开情况比较',
+          name: '各省专利申请排行Top15',
           type: 'bar',
           smooth: true,
           lineStyle: {
@@ -60,22 +54,7 @@ const ProvinceRankChart = ({data}) => {
               shadowOffsetY: 10
             }
           },
-          data: [
-            50000,
-            45850,
-            37500,
-            34563,
-            32142,
-            31098,
-            30968,
-            25709,
-            24583,
-            23233,
-            18500,
-            17491,
-            15999,
-            12075,
-            11001]
+          data: yAxisData.slice(0, 15)
         }
       ]
     };

@@ -1,5 +1,9 @@
 import request from '../utils/request';
 
+export async function getOverviewData () {
+  return request('/mock/overview_data.json');
+}
+
 export async function getApplyDateData () {
   return request('/mock/apply_date_data.json');
 }

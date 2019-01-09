@@ -1,4 +1,4 @@
-import { getApplyDateData } from '../services/RequestApi';
+import { getOverviewData } from '../services/RequestApi';
 
 export default {
 
@@ -17,7 +17,7 @@ export default {
 
   effects: {
     * fetch ({payload}, {put, call}) {
-      const response = yield call(getApplyDateData, payload);
+      const response = yield call(getOverviewData, payload);
       // if (response.data.code !== 0) {
       //   console.error('error');
       // }
