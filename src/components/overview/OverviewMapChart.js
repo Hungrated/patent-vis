@@ -28,9 +28,9 @@ const OverviewMapChart = ({data}) => {
               '201707',
               '201708',
               '201709',
-              '20170',
               '201710',
-              '20170',
+              '201711',
+              '201712',
               '201801'],
             [
               'amount',
@@ -71,7 +71,7 @@ const OverviewMapChart = ({data}) => {
         },
         series: [
           {
-            type: 'bar',
+            type: 'line',
             smooth: true,
             seriesLayoutBy: 'row',
             barWidth: 10
@@ -81,6 +81,11 @@ const OverviewMapChart = ({data}) => {
     }
 
     return {
+      title: {
+        text: '中国专利申请与公开数总览',
+        left: 'center',
+        top: 20
+      },
       visualMap: {
         min: 0,
         max: 1000,
@@ -108,7 +113,7 @@ const OverviewMapChart = ({data}) => {
         formatter: function (params) {
           // console.log(params)
           let tipHtml = '<div' +
-            ' style="height:360px;width:400px;border-radius:5px;background:#fff;box-shadow:0 0 10px 5px #aaa">' +
+            ' style="height:360px;width:400px;border-radius:5px;background:#fff;box-shadow:0 0 10px 5px #6cddff">' +
             '    <div style="height:50px;width:100%;border-radius:5px;background:#F8F9F9;border-bottom:1px solid #F0F0F0">' +
             '        <span style="line-height:50px;margin-left:18px">' +
             params.name + '</span>' +
@@ -403,7 +408,7 @@ const OverviewMapChart = ({data}) => {
         notMerge={true}
         lazyUpdate={true}
         style={{
-          width: '100%',
+          minWidth: '500px',
           height: 'calc(100vh - 70px)',
           minHeight: '500px'
         }}

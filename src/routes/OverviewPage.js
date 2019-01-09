@@ -3,6 +3,7 @@ import { connect } from 'dva';
 import styles from '../styles/OverviewPage.less';
 
 import OverviewMapChart from '../components/overview/OverviewMapChart';
+import ProvinceRankChart from '../components/overview/ProvinceRankChart';
 
 const mapStateToProps = ({overview}) => ({
   overview
@@ -28,7 +29,8 @@ class TrendsPage extends PureComponent {
     return (
       JSON.stringify(data) !== '{}' &&
       <div className={styles['g-main']}>
-        <OverviewMapChart data={data}/>
+        <div className={styles['g-left']}><OverviewMapChart data={data}/></div>
+        <div className={styles['g-right']}><ProvinceRankChart data={data}/></div>
       </div>
     );
   }
