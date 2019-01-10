@@ -34,11 +34,6 @@ function RouterConfig ({history, app}) {
       component: () => require('./routes/TechPage')
     },
     {
-      path: '/staff',
-      models: () => [...commonModels],
-      component: () => require('./routes/StaffPage')
-    },
-    {
       path: '/error',
       models: () => [...commonModels],
       component: () => require('./routes/ErrorPage')

@@ -7,6 +7,7 @@ import styles from '../styles/TrendsPage.less';
 import ApplyChart from '../components/trends/ApplyChart';
 import ApplyScatterChart from '../components/trends/ApplyScatterChart';
 import ProvincesApplyChart from '../components/trends/ProvincesApplyChart';
+import InventorsChart from '../components/trends/InventorsChart';
 
 const mapStateToProps = ({trends}) => ({
   trends
@@ -26,7 +27,7 @@ class TrendsPage extends PureComponent {
   constructor (props, context) {
     super(props, context);
     this.state = {
-      chartNum: 2
+      chartNum: 0
     };
   }
 
@@ -49,19 +50,31 @@ class TrendsPage extends PureComponent {
       (
         <div className={styles['g-main']}>
           <div className={styles['m-buttons']}>
-            <Button type="primary" onClick={() => {this.changeChart(0);}}>趋
-              势</Button><br/>
-            <Button type="primary" onClick={() => {this.changeChart(1);}}>密
-              度</Button><br/>
-            <Button type="primary" onClick={() => {this.changeChart(2);}}>省
-              份</Button>
+            <Button className={styles['m-button']}
+                    type="primary" onClick={() => {
+              this.changeChart(0);
+            }}>申请量</Button><br/>
+            <Button className={styles['m-button']}
+                    type="primary" onClick={() => {
+              this.changeChart(1);
+            }}>申请密度</Button><br/>
+            <Button className={styles['m-button']}
+                    type="primary" onClick={() => {
+              this.changeChart(2);
+            }}>省 份</Button><br/>
+            <Button className={styles['m-button']}
+                    type="primary" onClick={() => {
+              this.changeChart(3);
+            }}>研发人</Button>
           </div>
           {
             this.state.chartNum === 0
               ? (<ApplyChart data={data}/>)
               : (this.state.chartNum === 1
                 ? (<ApplyScatterChart data={data}/>)
-                : (<ProvincesApplyChart data={data}/>)
+                : (this.state.chartNum === 2
+                  ? (<ProvincesApplyChart data={data}/>)
+                  : (<InventorsChart data={data}/>))
               )
           }
         </div>

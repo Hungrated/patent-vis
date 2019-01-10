@@ -8,7 +8,9 @@ const CategoriesChart = ({data}) => {
 
   let legendData = [];
 
-  const convertedData = data.map(function (item) {
+  const rawData = data.categories || [];
+
+  const convertedData = rawData.map(function (item) {
     legendData.push(item.category);
     return {
       value: item.count,

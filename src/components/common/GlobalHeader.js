@@ -37,11 +37,6 @@ const navItems = [
     key: 'tech',
     tlt: '技术分布',
     link: '/tech'
-  },
-  {
-    key: 'staff',
-    tlt: '研发人员',
-    link: '/staff'
   }
 ];
 

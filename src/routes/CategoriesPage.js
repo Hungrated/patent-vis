@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 
-import StatisticsChart from '../components/categories/CategoriesChart';
+import CategoriesChart from '../components/categories/CategoriesChart';
+import CategoriesTrendChart
+  from '../components/categories/CategoriesTrendChart';
 import styles from '../styles/CategoriesPage.less';
 
 const mapStateToProps = ({categories}) => ({
@@ -28,7 +30,12 @@ class CategoriesPage extends PureComponent {
     return (
       JSON.stringify(data) !== '{}' &&
       <div className={styles['g-main']}>
-        <StatisticsChart data={data}/>
+        <div className={styles['g-left']}>
+          <CategoriesChart data={data}/>
+        </div>
+        <div className={styles['g-right']}>
+          <CategoriesTrendChart data={data}/>
+        </div>
       </div>
     );
   }

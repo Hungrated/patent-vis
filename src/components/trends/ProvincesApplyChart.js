@@ -116,7 +116,7 @@ const ProvincesApplyChart = ({data}) => {
         }
       },
       grid: {
-        left: 150,
+        left: '10%',
         bottom: 70,
         right: 200,
         containLabel: true
@@ -125,6 +125,7 @@ const ProvincesApplyChart = ({data}) => {
         {
           show: true,
           height: 25,
+          start: 50,
           xAxisIndex: [0],
           bottom: 30,
           handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
