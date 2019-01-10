@@ -36,9 +36,9 @@ const ApplyScatterChart = ({data}) => {
         }
       },
       grid: {
-        left: 50,
+        left: 150,
         bottom: 70,
-        right: 50,
+        right: 150,
         containLabel: true
       },
       dataZoom: [

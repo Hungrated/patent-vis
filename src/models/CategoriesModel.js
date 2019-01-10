@@ -1,4 +1,4 @@
-import { getCategoriesChartData } from '../services/RequestApi';
+import { getCategoriesData } from '../services/RequestApi';
 
 export default {
 
@@ -15,7 +15,7 @@ export default {
 
   effects: {
     * fetch ({payload}, {put, call}) {
-      const response = yield call(getCategoriesChartData, payload);
+      const response = yield call(getCategoriesData, payload);
       yield put({
         type: 'refresh',
         payload: response.data

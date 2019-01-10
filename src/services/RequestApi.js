@@ -8,7 +8,7 @@ export async function getTrendsData () {
   return request('/mock/trends_data.json');
 }
 
-export async function getCategoriesChartData () {
+export async function getCategoriesData () {
   return request('/mock/categories_data.json');
 }
 

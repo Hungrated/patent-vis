@@ -6,6 +6,7 @@ import styles from '../styles/TrendsPage.less';
 
 import ApplyChart from '../components/trends/ApplyChart';
 import ApplyScatterChart from '../components/trends/ApplyScatterChart';
+import ProvincesApplyChart from '../components/trends/ProvincesApplyChart';
 
 const mapStateToProps = ({trends}) => ({
   trends
@@ -25,7 +26,7 @@ class TrendsPage extends PureComponent {
   constructor (props, context) {
     super(props, context);
     this.state = {
-      chartNum: 0
+      chartNum: 2
     };
   }
 
@@ -48,13 +49,20 @@ class TrendsPage extends PureComponent {
       (
         <div className={styles['g-main']}>
           <div className={styles['m-buttons']}>
-            <Button type="primary" onClick={() => {this.changeChart(0)}}>趋 势</Button>&nbsp;
-            <Button type="primary" onClick={() => {this.changeChart(1)}}>密 度</Button>
+            <Button type="primary" onClick={() => {this.changeChart(0);}}>趋
+              势</Button><br/>
+            <Button type="primary" onClick={() => {this.changeChart(1);}}>密
+              度</Button><br/>
+            <Button type="primary" onClick={() => {this.changeChart(2);}}>省
+              份</Button>
           </div>
           {
             this.state.chartNum === 0
               ? (<ApplyChart data={data}/>)
-              : (<ApplyScatterChart data={data}/>)
+              : (this.state.chartNum === 1
+                ? (<ApplyScatterChart data={data}/>)
+                : (<ProvincesApplyChart data={data}/>)
+              )
           }
         </div>
       )

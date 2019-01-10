@@ -126,8 +126,7 @@ const ApplyChart = ({data}) => {
           type: 'line',
           label: {
             normal: {
-              show: false,
-              position: 'top'
+              show: false
             }
           },
           lineStyle: {

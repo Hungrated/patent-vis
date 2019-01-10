@@ -13,11 +13,13 @@ const SimpleApplyChart = ({data}) => {
     let yAxisYears = [];
 
     if (data.apply && data.apply.quarters && data.apply.years) {
-      data.apply.quarters.forEach(function (item) {
+      const quartersData = data.apply.quarters.slice(-60) || [];
+      const yearsData = data.apply.years.slice(-15) || [];
+      quartersData.forEach(function (item) {
         xAxisQuarters.push(item['year_quarter']);
         yAxisQuarters.push(item['amount']);
       });
-      data.apply.years.forEach(function (item) {
+      yearsData.forEach(function (item) {
         xAxisYears.push(item['year']);
         yAxisYears.push(item['amount']);
       });
@@ -25,7 +27,7 @@ const SimpleApplyChart = ({data}) => {
 
     return {
       title: {
-        text: '1979-2015年专利申请趋势',
+        text: '近15年专利申请趋势',
         left: 'center',
         top: 20
       },

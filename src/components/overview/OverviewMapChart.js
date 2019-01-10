@@ -72,6 +72,7 @@ const OverviewMapChart = ({data}) => {
     return {
       title: {
         text: '中国专利申请与公开数总览',
+        subtext: '悬停以查看详情',
         left: 'center',
         top: 20
       },
