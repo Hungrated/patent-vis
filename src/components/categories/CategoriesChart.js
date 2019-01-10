@@ -96,8 +96,8 @@ const CategoriesChart = ({data}) => {
                 });
                 percent = ((params.value / total) * 100).toFixed(2);
                 return '{label|' + params.name + '\n(类别代码：' + params.data.code +
-                  ')' + '}\n{hr|}\n{count|' +
-                  params.value + '}\n{blue|' + percent + '%}';
+                  ')}\n{hr|}\n{count|' + params.value + '}\n{blue|' + percent +
+                  '%}';
               },
               rich: richData
             }

@@ -4,8 +4,6 @@ import styles from '../../styles/SimpleCategoriesChart.less';
 
 const SimpleCategoriesChart = ({data}) => {
 
-  const scale = 1;
-
   let legendData = [];
 
   let rawData = data.categories || [];
@@ -21,9 +19,9 @@ const SimpleCategoriesChart = ({data}) => {
 
   const getOption = () => {
     return {
-
       title: {
         text: '专利类型占比',
+        subtext: '悬停或点击查看详情',
         left: 'center',
         top: 20
       },

@@ -4,8 +4,8 @@ export async function getOverviewData () {
   return request('/mock/overview_data.json');
 }
 
-export async function getApplyDateData () {
-  return request('/mock/apply_date_data.json');
+export async function getTrendsData () {
+  return request('/mock/trends_data.json');
 }
 
 export async function getCategoriesChartData () {
@@ -17,5 +17,5 @@ export async function getTechChartData () {
 }
 
 export async function searchWithParams () {
-  return request('/mock/apply_date_data.json');
+  return request('/mock/trends_data.json');
 }
