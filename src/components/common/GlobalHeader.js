@@ -43,7 +43,7 @@ const navItems = [
 class GlobalHeader extends PureComponent {
 
   state = {
-    current: window.location.pathname.substring(1) || 'trends'
+    current: window.location.pathname.substring(1) || 'overview'
   };
 
   togglePageRedirect = (key, link) => {
