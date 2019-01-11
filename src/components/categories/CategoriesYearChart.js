@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../../styles/TechChart.less';
+import styles from '../../styles/CategoriesYearChart.less';
 import ReactEcharts from 'echarts-for-react';
 
-const TechChart = ({data}) => {
+const CategoriesYearChart = ({data}) => {
 
-  const yearsData = data.years || {};
+  const yearsData = data.years2 || {};
 
   const getOption = () => {
 
@@ -28,7 +28,7 @@ const TechChart = ({data}) => {
 
     return {
       title: {
-        text: '1985-2015年专利技术分布堆叠图',
+        text: '1985-2015年专利类型堆叠图',
         top: 20,
         left: 'center'
       },
@@ -41,13 +41,9 @@ const TechChart = ({data}) => {
           }
         }
       },
-      legend: {
-        data: categories,
-        top: 100
-      },
       grid: {
-        left: '5%',
-        right: '5%',
+        left: '10%',
+        right: '10%',
         bottom: 70,
         containLabel: true
       },
@@ -55,7 +51,7 @@ const TechChart = ({data}) => {
         {
           show: true,
           height: 25,
-          start: 50,
+          start: 45,
           xAxisIndex: [0],
           bottom: 30,
           handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
@@ -95,15 +91,15 @@ const TechChart = ({data}) => {
         notMerge={true}
         lazyUpdate={true}
         style={{
+          minWidth: '300px',
           width: '100%',
-          height: 'calc(100vh - 70px)',
-          minHeight: '500px'
+          height: '100%'
         }}
       />
     </div>
   );
 };
 
-TechChart.propTypes = {};
+CategoriesYearChart.propTypes = {};
 
-export default TechChart;
+export default CategoriesYearChart;

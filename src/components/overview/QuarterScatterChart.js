@@ -21,8 +21,6 @@ const QuarterScatterChart = ({data}) => {
       }
     }
 
-    console.log(months, years, data);
-
     return {
       title: {
         text: '近15年专利申请时间密度总览',

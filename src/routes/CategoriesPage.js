@@ -5,6 +5,7 @@ import CategoriesChart from '../components/categories/CategoriesChart';
 import CategoriesTrendChart
   from '../components/categories/CategoriesTrendChart';
 import styles from '../styles/CategoriesPage.less';
+import CategoriesYearChart from '../components/categories/CategoriesYearChart';
 
 const mapStateToProps = ({categories}) => ({
   categories
@@ -35,6 +36,7 @@ class CategoriesPage extends PureComponent {
         </div>
         <div className={styles['g-right']}>
           <CategoriesTrendChart data={data}/>
+          <CategoriesYearChart data={data}/>
         </div>
       </div>
     );

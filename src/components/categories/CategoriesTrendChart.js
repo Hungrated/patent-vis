@@ -4,19 +4,7 @@ import styles from '../../styles/CategoriesTrendChart.less';
 
 const CategoriesTrendChart = ({data}) => {
 
-  //
-  // let legendData = [];
-  //
   const rawData = data.years || [];
-
-  // const convertedData = rawData.map(function (item) {
-  //   legendData.push(item.category);
-  //   return {
-  //     value: item.count,
-  //     code: item.code,
-  //     name: item.category
-  //   };
-  // });
 
   let years = [];
   let applyNums = [];
@@ -27,8 +15,6 @@ const CategoriesTrendChart = ({data}) => {
     applyNums.push(item['apply_num']);
     publicNums.push(item['public_num']);
   });
-
-  console.log(rawData);
 
   const getOption = () => {
 
@@ -106,7 +92,11 @@ const CategoriesTrendChart = ({data}) => {
         option={getOption()}
         notMerge={true}
         lazyUpdate={true}
-        style={{width: '100%', height: 'calc(100vh - 70px)'}}
+        style={{
+          minWidth: '300px',
+          width: '100%',
+          height: '100%'
+        }}
       />
     </div>
   );

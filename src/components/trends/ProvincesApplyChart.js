@@ -13,8 +13,6 @@ const ProvincesApplyChart = ({data}) => {
     let xAxisDetailedData = Object.keys(provinceData[provinces[0]] || {});
     let yAxisDetailedDataArr = [];
 
-    console.log(provinces);
-
     provinces.forEach(function (item) {
       yAxisDetailedDataArr.push({
         name: item,

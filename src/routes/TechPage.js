@@ -5,6 +5,7 @@ import 'antd/lib/input/style';
 
 import styles from '../styles/TechPage.less';
 import TechChart from '../components/tech/TechChart';
+import TechRatioChart from '../components/tech/TechRatioChart';
 
 const mapStateToProps = ({tech}) => ({
   tech
@@ -27,11 +28,15 @@ class TechPage extends PureComponent {
 
   render () {
     const {tech: {data}} = this.props;
-    console.log(data);
     return (
       JSON.stringify(data) !== '{}' &&
       <div className={styles['g-main']}>
-        <TechChart data={data}/>
+        <div className={styles['g-left']}>
+          <TechChart data={data}/>
+        </div>
+        <div className={styles['g-right']}>
+          <TechRatioChart data={data}/>
+        </div>
       </div>
     );
   }
