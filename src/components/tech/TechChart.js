@@ -6,6 +6,8 @@ const TechChart = ({data}) => {
 
   const yearsData = data.years || {};
 
+  const partsData = data.parts || {};
+
   const getOption = () => {
 
     const years = Object.keys(yearsData);
@@ -16,7 +18,7 @@ const TechChart = ({data}) => {
 
     categories.forEach(function (category) {
       seriesData.push({
-        name: category,
+        name: category + '：' + partsData[category],
         type: 'line',
         stack: '总量',
         areaStyle: {},
@@ -42,11 +44,15 @@ const TechChart = ({data}) => {
         }
       },
       legend: {
-        data: categories,
-        top: 100
+        data: categories.map(function (item) {
+          return item + '：' + partsData[item];
+        }),
+        orient: 'vertical',
+        top: 85,
+        left: '20%'
       },
       grid: {
-        left: '5%',
+        left: '2%',
         right: '5%',
         bottom: 70,
         containLabel: true

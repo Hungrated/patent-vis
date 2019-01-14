@@ -85,8 +85,10 @@ const CategoriesChart = ({data}) => {
         {
           type: 'pie',
           smooth: true,
-          radius: ['50%', '65%'],
-          startAngle: 85,
+          minAngle: 10,
+          radius: ['45%', '65%'],
+          startAngle: 75,
+          selectedMode: 'single',
           hoverAnimation: true,
           label: {
             normal: {

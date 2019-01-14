@@ -6,11 +6,13 @@ const TechRatioChart = ({data}) => {
 
   const totalData = data.total || [];
 
+  const partsData = data.parts || {};
+
   const getOption = () => {
 
     const convertedData = totalData.map(function (item) {
       return {
-        name: item.category,
+        name: item.category + '：' + partsData[item.category],
         value: item.amount
       };
     });
@@ -18,6 +20,7 @@ const TechRatioChart = ({data}) => {
     return {
       title: {
         text: '专利技术分布总体占比',
+        subtext: '悬停以查看详情',
         top: 20,
         left: 'center'
       },
@@ -25,12 +28,19 @@ const TechRatioChart = ({data}) => {
         trigger: 'item',
         formatter: '{a} <br/>{b} : {c} ({d}%)'
       },
+      grid: {
+        containLabel: true
+      },
       calculable: true,
       series: [
         {
           name: '技术分布总体占比',
           type: 'pie',
-          roseType: 'area',
+          selectedMode: 'single',
+          label: {
+            show: true,
+            position: 'inside'
+          },
           radius: [0, '80%'],
           data: convertedData
         }

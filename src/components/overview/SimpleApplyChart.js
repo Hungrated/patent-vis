@@ -34,7 +34,7 @@ const SimpleApplyChart = ({data}) => {
       tooltip: {
         trigger: 'axis'
       },
-      color: ['#2e5da2', '#73e2ff'],
+      color: ['#fb6d75', '#3b84dc'],
       grid: {
         top: '25%',
         containLabel: true

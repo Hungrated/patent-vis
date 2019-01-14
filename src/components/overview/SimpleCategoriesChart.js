@@ -34,6 +34,7 @@ const SimpleCategoriesChart = ({data}) => {
           name:'专利类型占比',
           type:'pie',
           center: ['50%', '50%'],
+          minAngle: 10,
           data: convertedData,
           selectedMode: 'single',
           label: {
@@ -48,7 +49,6 @@ const SimpleCategoriesChart = ({data}) => {
           },
           itemStyle: {
             normal: {
-              color: '#4a6fd4',
               shadowBlur: 50,
               shadowColor: 'rgba(0, 0, 0, 0.4)'
             }

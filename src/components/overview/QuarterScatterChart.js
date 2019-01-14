@@ -40,7 +40,9 @@ const QuarterScatterChart = ({data}) => {
       },
       angleAxis: {
         type: 'category',
-        data: months,
+        data: months.map(function (item) {
+          return item + '\n月';
+        }),
         boundaryGap: false,
         splitLine: {
           show: true,
