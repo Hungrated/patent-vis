@@ -16,8 +16,6 @@ const TechOverviewChart = ({data}) => {
 
     let dataPractical = {};
 
-    console.log(dataInvent);
-
     for (let i = 1985; i <= 2015; i++) {
       dataInvent[i.toString()] = [];
       dataPractical[i.toString()] = [];
@@ -62,8 +60,6 @@ const TechOverviewChart = ({data}) => {
     dataMap.dataInvent = dataFormatter(dataInvent);
 
     dataMap.dataPractical = dataFormatter(dataPractical);
-
-    console.log(dataMap);
 
     let innerOptions = [];
 
